@@ -1,27 +1,11 @@
-output "vpc_id" {
-  value = aws_vpc.main.id
+# outputs.tf
+
+output "instance_id" {
+  description = "The ID of the created EC2 instance"
+  value       = aws_instance.my_ec2_instance.id
 }
 
-output "public_subnet_id" {
-  value = aws_subnet.public.id
-}
-
-output "private_subnet_id" {
-  value = aws_subnet.private.id
-}
-
-output "public_instance_id" {
-  value = aws_instance.public_instance.id
-}
-
-output "private_instance_id" {
-  value = aws_instance.private_instance.id
-}
-
-output "nat_gateway_id" {
-  value = aws_nat_gateway.nat.id
-}
-
-output "internet_gateway_id" {
-  value = aws_internet_gateway.gw.id
+output "instance_public_ip" {
+  description = "The public IP of the created EC2 instance"
+  value       = aws_instance.my_ec2_instance.public_ip
 }
